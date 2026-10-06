@@ -186,6 +186,7 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
   background: radial-gradient(ellipse 60% 55% at 50% 0%, rgba(72,173,255,0.10) 0%, transparent 70%);
 }
 .hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
+@media (max-width: 900px) { .br-desk { display: none; } }
 .badge-dark {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 16px 6px 10px; border-radius: 100px;
@@ -268,7 +269,7 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 .global { margin-top: 16px; display: flex; align-items: center; gap: 32px; padding: 28px 32px; }
 .global .plan-name { margin: 0; white-space: nowrap; }
 .global p { flex: 1; font-size: 15px; line-height: 1.6; color: var(--text-3); }
-.fineprint { margin-top: 24px; font-size: 13px; line-height: 1.6; color: var(--text-4); }
+.fineprint { margin-top: 24px; font-size: 15px; line-height: 1.6; color: var(--text-3); }  /* matches .global p */
 
 /* ─── EVERYTHING ELSE WE CHARGE FOR (table) ─── */
 .charges { padding: 0; overflow: hidden; }
@@ -403,7 +404,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
 .light-zone { --black: #242423; --gray-sub: #8C8C8C; --gray-mid: #4A4A48; }
 /* Breathing room either side of the fade, so the dark cards above have mostly
    scrolled out of view while the background changes (scales with viewport height). */
-#services { padding-bottom: max(160px, 40vh); }
+#quotes { padding-bottom: max(160px, 40vh); }
 .light-zone > .section:first-child { padding-top: 96px; }
 @media (max-width: 900px) { .light-zone > .section:first-child { padding-top: 72px; } }
 .light-zone .section-h2 { color: var(--black); }
@@ -562,8 +563,8 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
   <header class="hero">
     <div class="hero-inner">
       <span class="badge-dark"><span class="badge-dot"></span>MiHQ pricing</span>
-      <h1 class="hero-h1">You shouldn’t have to ask what the platform costs</h1>
-      <p class="hero-sub">Every MiHQ plan is priced below. Respondents from our panel and research we run for you are quoted, because the cost depends on who you need to reach. Quotes come back within one working day</p>
+      <h1 class="hero-h1">Every price, up front.<br class="br-desk"> Find the right MiHQ plan for you</h1>
+      <p class="hero-sub">Our MiHQ plans and prices below. From custom research and access to our respondent panel, pricing is determined by your audience and research requirements. Request a quote now!</p>
     </div>
   </header>
 
@@ -647,81 +648,12 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         <a href="#" class="btn btn-outline-white">Get a quote</a>
       </div>
 
-      <p class="fineprint">All prices in USD, excluding applicable taxes. Starter, Team and Professional run on a 12-month term. A response is one completed survey of up to 50 questions; longer surveys use the allowance proportionally faster.</p>
-    </div>
-  </section>
-
-  <!-- ═══ EVERYTHING ELSE WE CHARGE FOR ═══ -->
-  <section class="section tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="section-h2">Everything else we charge for</h2>
-      </div>
-      <div class="card charges reveal">
-        <table>
-          <thead>
-            <tr><th scope="col">Item</th><th scope="col">Starter</th><th scope="col">Team</th><th scope="col">Professional</th><th scope="col">Enterprise</th><th scope="col">Global</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Extra seat, per year</th>
-              <td data-label="Starter">$1,200</td><td data-label="Team">$1,000</td><td data-label="Professional">$900</td><td data-label="Enterprise">$750</td><td data-label="Global">$750</td>
-            </tr>
-            <tr>
-              <th scope="row">Responses above your allowance</th>
-              <td class="span" colspan="5">$0.65 per response on every plan, settled at renewal</td>
-            </tr>
-            <tr>
-              <th scope="row">Invites sent to your own list, per 1,000 emails</th>
-              <td data-label="Starter">$150</td><td data-label="Team">$120</td><td data-label="Professional">$100</td><td data-label="Enterprise">$80</td><td data-label="Global">$80</td>
-            </tr>
-            <tr>
-              <th scope="row">Respondents from our panel</th>
-              <td class="span" colspan="5">Quoted per study. Team and above draw on fieldwork credit first.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ WHAT WE QUOTE, AND WHY ═══ -->
-  <section class="section tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="section-h2">What we quote, and why</h2>
-        <p class="section-p">A single published number would be wrong for almost everyone. Every quote comes back within one working day, in writing, whether or not you buy</p>
-      </div>
-      <div class="quote-grid">
-        <div class="card warm quote-card reveal">
-          <h3 class="h3">Respondents from our panel</h3>
-          <p class="body">Priced per completed interview. The rate depends on the market, how long the survey runs and how many people qualify.</p>
-          <a href="#" class="text-link gold">Get a fieldwork quote →</a>
-        </div>
-        <div class="card warm quote-card reveal reveal-d1">
-          <h3 class="h3">Research we run for you</h3>
-          <p class="body">MiResearch designs, fields and delivers the study. Each project is scoped and priced on its own brief.</p>
-          <a href="#services" class="text-link gold">See research services →</a>
-        </div>
-        <div class="card warm quote-card reveal reveal-d2">
-          <h3 class="h3">MiHQ Global</h3>
-          <p class="body">Priced on the number of business units, the markets you work in and the volume you field.</p>
-          <a href="#" class="text-link gold">Get a quote →</a>
-        </div>
-      </div>
-
-      <div class="card strip reveal" style="margin-top:16px">
-        <div class="strip-copy">
-          <h3 class="h3">Only need one study?</h3>
-          <p class="body">Have our team run it, and it can come with 90 days of MiHQ, so the data is yours to recut rather than a deck in a folder. Take an annual MiHQ licence within those 90 days and the MiHQ Project fee comes off your first invoice</p>
-        </div>
-        <a href="#" class="btn btn-outline-white">Talk to us about a study</a>
-      </div>
+      <p class="fineprint">All prices are in USD, excluding applicable taxes. Starter, Team and Professional plans are offered on a 12-month term. One response refers to one completed survey of up to 50 questions. Longer surveys use the response allowance proportionally faster.</p>
     </div>
   </section>
 
   <!-- ═══ MIRESEARCH ═══ -->
-  <section class="section" id="services">
+  <section class="section tight" id="services">
     <div class="container">
       <div class="services-head reveal">
         <span class="eyebrow gold">MiResearch</span>
@@ -808,6 +740,41 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
     </div>
   </section>
 
+  <!-- ═══ WHAT WE QUOTE, AND WHY ═══ -->
+  <section class="section tight" id="quotes">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-h2">What we quote, and why</h2>
+        <p class="section-p">A single published number would be wrong for almost everyone. Every quote comes back within one working day, in writing, whether or not you buy</p>
+      </div>
+      <div class="quote-grid">
+        <div class="card warm quote-card reveal">
+          <h3 class="h3">Respondents from our panel</h3>
+          <p class="body">Priced per completed interview. The rate depends on the market, how long the survey runs and how many people qualify.</p>
+          <a href="#" class="text-link gold">Get a fieldwork quote →</a>
+        </div>
+        <div class="card warm quote-card reveal reveal-d1">
+          <h3 class="h3">Research we run for you</h3>
+          <p class="body">MiResearch designs, fields and delivers the study. Each project is scoped and priced on its own brief.</p>
+          <a href="#services" class="text-link gold">See research services →</a>
+        </div>
+        <div class="card warm quote-card reveal reveal-d2">
+          <h3 class="h3">MiHQ Global</h3>
+          <p class="body">Priced on the number of business units, the markets you work in and the volume you field.</p>
+          <a href="#" class="text-link gold">Get a quote →</a>
+        </div>
+      </div>
+
+      <div class="card strip reveal" style="margin-top:16px">
+        <div class="strip-copy">
+          <h3 class="h3">Only need one study?</h3>
+          <p class="body">Have our team run it, and it can come with 90 days of MiHQ, so the data is yours to recut rather than a deck in a folder. Take an annual MiHQ licence within those 90 days and the MiHQ Project fee comes off your first invoice</p>
+        </div>
+        <a href="#" class="btn btn-outline-white">Talk to us about a study</a>
+      </div>
+    </div>
+  </section>
+
 </div><!-- /.dark-zone -->
 
 <div class="light-zone" id="light-zone">
@@ -838,71 +805,6 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
           <div class="every-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="2"/><path d="M2 10l3.5-3 3 2.5L11 7l3 2.5"/></svg></div>
           <p class="step-name">Media storage is not billed</p>
           <p class="body">Image, audio, video and file answers are covered by a fair use allowance on every plan. Nothing is metered.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ EVERYTHING ELSE WE OFFER ═══ -->
-  <section class="section tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="section-h2">Everything else we offer</h2>
-      </div>
-      <div class="split">
-        <div class="card reveal">
-          <span class="eyebrow">Products</span>
-          <ul class="list-rows">
-            <li><div><p class="name">MiAudience</p><p class="desc">Profiled audience data across six Southeast Asian markets</p></div><span class="model">Subscription</span></li>
-            <li><div><p class="name">MiReports</p><p class="desc">Ready-made reports drawn from MiAudience data</p></div><span class="model">Per report</span></li>
-            <li><div><p class="name">MiBrand</p><p class="desc">Continuous brand tracking</p></div><span class="model">Quoted</span></li>
-            <li><div><p class="name">MiTemplates</p><p class="desc">Ready-built studies with norms</p></div><span class="model">Quoted</span></li>
-          </ul>
-          <a href="#" class="text-link">See all products →</a>
-        </div>
-        <div class="card warm reveal reveal-d1">
-          <span class="eyebrow gold">MiResearch, our research services</span>
-          <ul class="list-rows">
-            <li><div><p class="name">MiCustom</p><p class="desc">Custom research, scoped and run end to end</p></div><span class="model">Per project</span></li>
-            <li><div><p class="name">MiBus</p><p class="desc">Omnibus: add your questions to a scheduled survey</p></div><span class="model">Per question</span></li>
-            <li><div><p class="name">MiRetail</p><p class="desc">Shopper and category research</p></div><span class="model">Coming soon</span></li>
-          </ul>
-          <a href="#services" class="text-link gold">See research services →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FAQ ═══ -->
-  <section class="section tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="section-h2">Questions people ask</h2>
-      </div>
-      <div class="faq reveal">
-        <div class="faq-item">
-          <h3 class="faq-q">What counts as a response?</h3>
-          <p class="faq-a">One completed survey of up to 50 questions. We count answers rather than interviews, so a 100-question survey uses two responses of your allowance.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">How do we pay?</h3>
-          <p class="faq-a">Starter is paid by card, upfront for the year. Team and Professional are invoiced annually in advance on 30-day terms. Enterprise and Global are invoiced quarterly in advance.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Do our own contacts count?</h3>
-          <p class="faq-a">Yes. Responses from your own list use your allowance. If we send the invitations for you, that is charged per 1,000 emails, as listed above.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Which markets do you cover?</h3>
-          <p class="faq-a">Our own panel covers Singapore, Malaysia, Thailand, Indonesia, the Philippines and Vietnam. Partner panels extend reach to more than 150 countries.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">What happens as we grow?</h3>
-          <p class="faq-a">Extra seats cost less on higher plans, and the discount on panel rates rises from 5% on Team to 20% on Global.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">How does fieldwork credit work?</h3>
-          <p class="faq-a">Team and above include credit to spend on respondents from our panel. It is drawn at the quoted rate for each study.</p>
         </div>
       </div>
     </div>

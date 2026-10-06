@@ -3,7 +3,7 @@
 A front-end mock of the Milieu pricing page, built to sit seamlessly alongside the
 [mili.eu](https://mili.eu/) landing page.
 
-**This is a mock-up.** Copy is from the "MiHQ pricing page boards" doc (2026-10-04) and every button/link is a placeholder.
+**This is a mock-up.** Copy is from the "MiHQ pricing page boards" doc (2026-10-04) plus agreed edits and every button/link is a placeholder.
 
 ## What's in it
 
@@ -26,19 +26,17 @@ Uses the mili.eu landing page design system (taken from its `main.css` / `nav.cs
 
 ## Page structure
 
-1. Hero, "You shouldn’t have to ask what the platform costs"
-2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise, plus MiHQ Global
-3. Everything else we charge for (table; stacks into a list on mobile)
-4. What we quote, and why
-5. Only need one study?
-6. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Back to plans
-7. In every plan *(light from here)*
-8. Everything else we offer
-9. Questions people ask
-10. Tell us the study, not your budget
-11. Footer
+1. Hero, "Every price, up front. Find the right MiHQ plan for you"
+2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise, plus MiHQ Global and the pricing small print
+3. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Back to plans
+4. What we quote, and why; Only need one study?
+5. In every plan *(light from here)*
+6. Tell us the study, not your budget
+7. Footer
 
-Copy source: "MiHQ pricing page boards" (2026-10-04).
+Copy source: "MiHQ pricing page boards" (2026-10-04), with final edits agreed on 2026-10-06
+(new hero title and sub-headline, revised small print, no full stops at the end of headlines and
+sub-headlines; "Everything else we charge for", "Everything else we offer" and the FAQ removed).
 
 ## Preview locally
 
