@@ -3,8 +3,7 @@
 A front-end mock of the Milieu pricing page, built to sit seamlessly alongside the
 [mili.eu](https://mili.eu/) landing page.
 
-**This is a mock-up.** Copy is temporary (from the "Pricing page, desktop" and
-"MiResearch, the services arm" content docs) and every button/link is a placeholder.
+**This is a mock-up.** Copy is from the "MiHQ pricing page boards" doc (2026-10-04) and every button/link is a placeholder.
 
 ## What's in it
 
@@ -17,7 +16,7 @@ Uses the mili.eu landing page design system (taken from its `main.css` / `nav.cs
 
 - **Type:** Archivo, all weights
 - **Dark sections** (hero → MiResearch): `#1A1A1A` page, `#242423` cards, `#48ADFF` / `#FFDFA7` accents
-- **Light sections** ("Everything else we do" → closing CTA): `#F1F1F1` page, white cards, `#0067C2` accents
+- **Light sections** ("In every plan" → closing CTA): `#F1F1F1` page, white cards, `#0067C2` accents
 - **Dark → light fade on scroll**, same logic as the landing page: the background blends
   `#1A1A1A → #F1F1F1` as the light sections enter (starting at 85% of the viewport, over half a viewport height)
 - **Nav** switches between its dark and light frosted states, as on the landing page
@@ -27,18 +26,19 @@ Uses the mili.eu landing page design system (taken from its `main.css` / `nav.cs
 
 ## Page structure
 
-1. Hero — "You shouldn't have to ask what the software costs."
-2. Priced on this page / Quoted, and here is why
-3. Do it yourself (MiHQ) / Have us do it (MiResearch)
-4. The bridge
-5. MiHQ plans — Starter, Team, Professional (most chosen), Enterprise, Global
-6. Reaching respondents
-7. MiResearch — MiCustom, MiBus, MiRetail · A project is not a dead end · Back to plans
-8. Everything else we do *(light from here)*
-9. In every plan
-10. Questions people actually ask
-11. Tell us the study, not your budget
-12. Footer
+1. Hero, "You shouldn’t have to ask what the platform costs"
+2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise, plus MiHQ Global
+3. Everything else we charge for (table; stacks into a list on mobile)
+4. What we quote, and why
+5. Only need one study?
+6. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Back to plans
+7. In every plan *(light from here)*
+8. Everything else we offer
+9. Questions people ask
+10. Tell us the study, not your budget
+11. Footer
+
+Copy source: "MiHQ pricing page boards" (2026-10-04).
 
 ## Preview locally
 
