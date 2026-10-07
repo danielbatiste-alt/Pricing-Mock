@@ -27,14 +27,18 @@ Uses the mili.eu landing page design system (taken from its `main.css` / `nav.cs
 ## Page structure
 
 1. Hero: pill "MiHQ Powered by MiCortex", title "Every price, up front. Find the right MiHQ plan for you"
-2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise, then MiHQ Global, MiAudience and the pricing small print
-3. Everything else we charge for (table; stacks into a list on mobile)
-4. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Back to plans
+2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise
+3. MiHQ Global and MiAudience cards, then "Everything else we charge for" as a dropdown (table; stacks into a list on mobile), then the pricing small print
+4. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Not sure… / Back to plans
 5. What we quote, and why; Only need one study?
 6. In every plan *(light from here)*
 7. Questions people ask (collapsed accordion, one answer open at a time)
 8. Tell us the study, not your budget
 9. Footer
+
+All the full-width cards (MiHQ Global, MiAudience, the charges dropdown, Not sure…, Only need one
+study?) share one style: 20px title, 15px text, button on the right, 28/32px padding, outline buttons.
+Solid blue buttons are kept for the main actions only.
 
 Copy source: "MiHQ pricing page boards" (2026-10-04), with edits agreed up to 2026-10-07
 (new hero pill, title and sub-headline; revised small print; MiAudience card; no full stops at the

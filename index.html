@@ -221,10 +221,11 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 /* ─── STRIP (Global / Only need one study? / Not sure) ─── */
 .strip {
   display: flex; align-items: center; justify-content: space-between; gap: 40px;
-  padding: 36px 40px;
+  padding: 28px 32px; margin-top: 16px;
 }
-.strip-copy { max-width: 760px; }
-.strip .h3 { margin-bottom: 10px; }
+.strip-copy { max-width: 820px; }
+.strip-title { font-size: 20px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25; color: #fff; margin: 0; }
+.strip-copy p { margin-top: 8px; font-size: 15px; line-height: 1.6; color: var(--text-3); text-wrap: balance; }
 .strip .btn { flex: 0 0 auto; }
 
 /* ─── PLANS ─── */
@@ -268,10 +269,7 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23FFDFA7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v12M2 8h12'/%3E%3C/svg%3E");
 }
 
-.global { margin-top: 16px; display: flex; align-items: center; gap: 32px; padding: 28px 32px; }
-.global .plan-name { margin: 0; white-space: nowrap; flex: 0 0 128px; }
-.global p { flex: 1; font-size: 15px; line-height: 1.6; color: var(--text-3); text-wrap: balance; }
-.fineprint { margin-top: 24px; font-size: 15px; line-height: 1.6; color: var(--text-3); }  /* matches .global p */
+.fineprint { margin-top: 24px; font-size: 15px; line-height: 1.6; color: var(--text-3); }  /* matches .strip-copy p */
 
 /* ─── EVERYTHING ELSE WE CHARGE FOR (table) ─── */
 .charges { padding: 0; overflow: hidden; }
@@ -285,6 +283,22 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 .charges tbody th { font-weight: 500; color: var(--text-2); width: 34%; }
 .charges td { color: #fff; font-weight: 600; white-space: nowrap; }
 .charges td.span { color: var(--text-3); font-weight: 400; white-space: normal; }
+
+/* charges table as a dropdown under the Global / MiAudience cards */
+.charges.drop { margin-top: 16px; }
+.drop-toggle .strip-title { flex: 1; }
+.drop-toggle {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 28px 32px; background: none; border: 0; cursor: pointer; text-align: left; font-family: inherit;
+}
+.drop-toggle .plan-name { margin: 0; }
+.drop-toggle:focus-visible { outline: 2px solid var(--blue-dark); outline-offset: -4px; border-radius: var(--radius-card); }
+.drop .faq-icon { border-color: rgba(255,255,255,0.22); color: var(--text-3); }
+.drop.open .faq-icon { transform: rotate(45deg); background: var(--primary); border-color: var(--primary); color: #fff; }
+.drop-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.drop.open .drop-panel { max-height: 1400px; }
+.drop table { border-top: 1px solid var(--line-2); }
+.drop th:first-child, .drop td:first-child { padding-left: 32px; }
 
 /* ─── WHAT WE QUOTE, AND WHY ─── */
 .quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -342,8 +356,6 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 .step-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: #fff; margin-bottom: 8px; }
 .step .body { font-size: 14px; }
 
-.unsure { margin-top: 16px; }
-.unsure p { font-size: 17px; line-height: 1.6; color: var(--text-2); }
 
 /* ─── EVERYTHING ELSE ─── */
 .list-rows { list-style: none; margin-bottom: 24px; }
@@ -499,8 +511,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
   .closing { padding: 72px 24px 96px; }
   .hero { padding: 48px 24px 40px; }
   .split, .svc-grid, .quote-grid { grid-template-columns: 1fr; }
-  .strip, .global { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .strip { padding: 32px; }
+  .strip { flex-direction: column; align-items: flex-start; gap: 20px; padding: 28px 24px; }
   .meet { padding: 32px; }
   /* charges table → stacked list (mobile board) */
   .charges table, .charges tbody, .charges tr, .charges th, .charges td { display: block; width: auto; }
@@ -512,6 +523,8 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
   .charges td { display: flex; justify-content: space-between; gap: 16px; padding: 4px 0; }
   .charges td[data-label]::before { content: attr(data-label); color: var(--text-3); font-weight: 400; }
   .charges td.span { display: block; }
+  .drop th:first-child, .drop td:first-child { padding-left: 0; }
+  .drop-toggle { padding: 24px; }
   .steps { grid-template-columns: 1fr; gap: 28px; padding-top: 0; padding-left: 40px; }
   .steps::before { top: 10px; bottom: 10px; left: 9px; right: auto; width: 2px; height: auto; }
   .steps::after { display: none; }
@@ -522,7 +535,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
 @media (max-width: 640px) {
   .plans, .every { grid-template-columns: 1fr; }
   .card { padding: 28px 24px; }
-  .meet, .strip { padding: 28px 24px; }
+  .meet { padding: 28px 24px; }
   .list-rows li { flex-direction: column; gap: 6px; }
   .list-rows .model { padding-top: 0; }
   .closing-ctas { flex-direction: column; align-items: center; }
@@ -656,30 +669,29 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         </article>
       </div>
 
-      <div class="card global reveal">
-        <h3 class="plan-name">MiHQ Global</h3>
-        <p>For groups, holding companies and resellers. 40 seats, unlimited workspaces, 160,000 responses a year, 20% off panel rates, 24-month term. Quoted on business units, markets and volume.</p>
+      <div class="card strip reveal">
+        <div class="strip-copy">
+          <h3 class="strip-title">MiHQ Global</h3>
+          <p>For groups, holding companies and resellers. 40 seats, unlimited workspaces, 160,000 responses a year, 20% off panel rates, 24-month term. Quoted on business units, markets and volume.</p>
+        </div>
         <a href="#" class="btn btn-outline-white">Get a quote</a>
       </div>
 
-      <div class="card global reveal">
-        <h3 class="plan-name">MiAudience</h3>
-        <p>Profiled audience data across six Southeast Asian markets, plus ready-made MiReports drawn from the same data.</p>
+      <div class="card strip reveal">
+        <div class="strip-copy">
+          <h3 class="strip-title">MiAudience</h3>
+          <p>Profiled audience data across six Southeast Asian markets, plus ready-made MiReports drawn from the same data.</p>
+        </div>
         <a href="#" class="btn btn-outline-white">Explore MiAudience</a>
       </div>
 
-      <p class="fineprint">All prices are in USD, excluding applicable taxes. Starter, Team and Professional plans are offered on a 12-month term. One response refers to one completed survey of up to 50 questions. Longer surveys use the response allowance proportionally faster.</p>
-    </div>
-  </section>
-
-  <!-- ═══ EVERYTHING ELSE WE CHARGE FOR ═══ -->
-  <section class="section tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="section-h2">Everything else we charge for</h2>
-      </div>
-      <div class="card charges reveal">
-        <table>
+      <div class="card charges drop reveal" id="charges">
+        <button type="button" class="drop-toggle" aria-expanded="false" aria-controls="charges-panel">
+          <span class="strip-title">Everything else we charge for</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="drop-panel" id="charges-panel">
+          <table>
           <thead>
             <tr><th scope="col">Item</th><th scope="col">Starter</th><th scope="col">Team</th><th scope="col">Professional</th><th scope="col">Enterprise</th><th scope="col">Global</th></tr>
           </thead>
@@ -702,7 +714,10 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
+
+      <p class="fineprint">All prices are in USD, excluding applicable taxes. Starter, Team and Professional plans are offered on a 12-month term. One response refers to one completed survey of up to 50 questions. Longer surveys use the response allowance proportionally faster.</p>
     </div>
   </section>
 
@@ -787,9 +802,12 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         </div>
       </div>
 
-      <div class="card strip unsure reveal">
-        <p>Not sure whether you want the platform, the team, or both? Start with one study and decide afterwards.</p>
-        <a href="#plans" class="btn btn-primary btn-lg">Back to plans</a>
+      <div class="card strip reveal">
+        <div class="strip-copy">
+          <h3 class="strip-title">Not sure whether you want the platform, the team, or both?</h3>
+          <p>Start with one study and decide afterwards.</p>
+        </div>
+        <a href="#plans" class="btn btn-outline-white">Back to plans</a>
       </div>
     </div>
   </section>
@@ -819,10 +837,10 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         </div>
       </div>
 
-      <div class="card strip reveal" style="margin-top:16px">
+      <div class="card strip reveal">
         <div class="strip-copy">
-          <h3 class="h3">Only need one study?</h3>
-          <p class="body">Have our team run it, and it can come with 90 days of MiHQ, so the data is yours to recut rather than a deck in a folder. Take an annual MiHQ licence within those 90 days and the MiHQ Project fee comes off your first invoice</p>
+          <h3 class="strip-title">Only need one study?</h3>
+          <p>Have our team run it, and it can come with 90 days of MiHQ, so the data is yours to recut rather than a deck in a folder. Take an annual MiHQ licence within those 90 days and the MiHQ Project fee comes off your first invoice</p>
         </div>
         <a href="#" class="btn btn-outline-white">Talk to us about a study</a>
       </div>
@@ -996,6 +1014,13 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
       document.body.classList.remove('nav-open');
       toggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // "Everything else we charge for" dropdown
+  var drop = document.getElementById('charges');
+  drop.querySelector('.drop-toggle').addEventListener('click', function () {
+    var open = drop.classList.toggle('open');
+    this.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
   // FAQ accordion: one open at a time, as on the Milieu inner pages
