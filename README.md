@@ -26,17 +26,21 @@ Uses the mili.eu landing page design system (taken from its `main.css` / `nav.cs
 
 ## Page structure
 
-1. Hero, "Every price, up front. Find the right MiHQ plan for you"
-2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise, plus MiHQ Global and the pricing small print
-3. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Back to plans
-4. What we quote, and why; Only need one study?
-5. In every plan *(light from here)*
-6. Tell us the study, not your budget
-7. Footer
+1. Hero: pill "MiHQ Powered by MiCortex", title "Every price, up front. Find the right MiHQ plan for you"
+2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise, then MiHQ Global, MiAudience and the pricing small print
+3. Everything else we charge for (table; stacks into a list on mobile)
+4. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Back to plans
+5. What we quote, and why; Only need one study?
+6. In every plan *(light from here)*
+7. Questions people ask (collapsed accordion, one answer open at a time)
+8. Tell us the study, not your budget
+9. Footer
 
-Copy source: "MiHQ pricing page boards" (2026-10-04), with final edits agreed on 2026-10-06
-(new hero title and sub-headline, revised small print, no full stops at the end of headlines and
-sub-headlines; "Everything else we charge for", "Everything else we offer" and the FAQ removed).
+Copy source: "MiHQ pricing page boards" (2026-10-04), with edits agreed up to 2026-10-07
+(new hero pill, title and sub-headline; revised small print; MiAudience card; no full stops at the
+end of headlines and sub-headlines; "Everything else we offer" removed).
+
+The FAQ accordion follows the Milieu inner pages (canvas-v2 / MiAudience).
 
 ## Preview locally
 

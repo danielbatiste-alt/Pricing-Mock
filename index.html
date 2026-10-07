@@ -159,6 +159,8 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
   max-width: 560px; margin: 0 auto; line-height: 1.65;
 }
 .section-head { text-align: center; margin-bottom: 64px; }
+.section-p, .hero-sub, .closing-p { text-wrap: balance; }
+.section-p.wide { max-width: 760px; }
 
 .h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.025em; color: #fff; line-height: 1.15; margin-bottom: 12px; }
 .body { font-size: 15px; line-height: 1.65; color: var(--text-3); }
@@ -200,8 +202,8 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 }
 @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.8); } }
 .hero-h1 {
-  /* same style as the section titles (.section-h2) */
-  font-size: clamp(34px, 4.5vw, 56px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.04;
+  /* same style as the section titles (.section-h2), with extra line spacing */
+  font-size: clamp(34px, 4.5vw, 56px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.16;
   color: #fff; margin-bottom: 16px;
 }
 .hero-sub {
@@ -267,8 +269,8 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 }
 
 .global { margin-top: 16px; display: flex; align-items: center; gap: 32px; padding: 28px 32px; }
-.global .plan-name { margin: 0; white-space: nowrap; }
-.global p { flex: 1; font-size: 15px; line-height: 1.6; color: var(--text-3); }
+.global .plan-name { margin: 0; white-space: nowrap; flex: 0 0 128px; }
+.global p { flex: 1; font-size: 15px; line-height: 1.6; color: var(--text-3); text-wrap: balance; }
 .fineprint { margin-top: 24px; font-size: 15px; line-height: 1.6; color: var(--text-3); }  /* matches .global p */
 
 /* ─── EVERYTHING ELSE WE CHARGE FOR (table) ─── */
@@ -365,11 +367,27 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 .every .step-name { font-size: 17px; }
 .every .body { font-size: 14px; }
 
-/* ─── FAQ ─── */
-.faq { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
-.faq-item { padding: 28px 0; border-bottom: 1px solid var(--line-2); }
-.faq-q { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: #fff; margin-bottom: 10px; line-height: 1.3; }
-.faq-a { font-size: 15px; line-height: 1.65; color: var(--text-3); }
+/* ─── FAQ (accordion, same as the Milieu inner pages: canvas-v2 / miaudience) ─── */
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); padding: 28px 0; }
+.faq-q {
+  font-size: 17px; font-weight: 700; color: var(--black, #242423);
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  letter-spacing: -0.02em; user-select: none;
+}
+.faq-q:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; border-radius: 4px; }
+.faq-icon {
+  width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.14);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: transform 0.25s, background 0.25s;
+  font-size: 16px; color: #8C8C8C; font-weight: 400;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--primary); border-color: var(--primary); color: white; }
+.faq-a {
+  font-size: 15px; color: #4A4A48; line-height: 1.65;
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease, margin-top 0.25s;
+}
+.faq-item.open .faq-a { max-height: 600px; margin-top: 16px; }
 
 /* ─── CLOSING CTA (homepage quote-section pattern) ─── */
 .closing { padding: 96px 48px 128px; text-align: center; }
@@ -426,9 +444,6 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
 .light-zone .every-icon svg { stroke: var(--primary); }
 .light-zone .step-name { color: var(--black); }
 .light-zone .body { color: var(--gray-sub); }
-.light-zone .faq-item { border-bottom-color: rgba(0,0,0,0.08); }
-.light-zone .faq-q { color: var(--black); }
-.light-zone .faq-a { color: var(--gray-sub); }
 .light-zone .closing-h { color: var(--gray-sub); }
 .light-zone .closing-h em { color: var(--primary); }
 .light-zone .closing-p { color: var(--gray-sub); }
@@ -483,8 +498,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
   .section { padding: 72px 24px; }
   .closing { padding: 72px 24px 96px; }
   .hero { padding: 48px 24px 40px; }
-  .split, .svc-grid, .quote-grid, .faq { grid-template-columns: 1fr; }
-  .faq { column-gap: 0; }
+  .split, .svc-grid, .quote-grid { grid-template-columns: 1fr; }
   .strip, .global { flex-direction: column; align-items: flex-start; gap: 20px; }
   .strip { padding: 32px; }
   .meet { padding: 32px; }
@@ -562,7 +576,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
   <!-- ═══ HERO ═══ -->
   <header class="hero">
     <div class="hero-inner">
-      <span class="badge-dark"><span class="badge-dot"></span>MiHQ pricing</span>
+      <span class="badge-dark"><span class="badge-dot"></span>MiHQ Powered by MiCortex</span>
       <h1 class="hero-h1">Every price, up front.<br class="br-desk"> Find the right MiHQ plan for you</h1>
       <p class="hero-sub">Our MiHQ plans and prices below. From custom research and access to our respondent panel, pricing is determined by your audience and research requirements. Request a quote now!</p>
     </div>
@@ -648,7 +662,47 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         <a href="#" class="btn btn-outline-white">Get a quote</a>
       </div>
 
+      <div class="card global reveal">
+        <h3 class="plan-name">MiAudience</h3>
+        <p>Profiled audience data across six Southeast Asian markets, plus ready-made MiReports drawn from the same data.</p>
+        <a href="#" class="btn btn-outline-white">Explore MiAudience</a>
+      </div>
+
       <p class="fineprint">All prices are in USD, excluding applicable taxes. Starter, Team and Professional plans are offered on a 12-month term. One response refers to one completed survey of up to 50 questions. Longer surveys use the response allowance proportionally faster.</p>
+    </div>
+  </section>
+
+  <!-- ═══ EVERYTHING ELSE WE CHARGE FOR ═══ -->
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-h2">Everything else we charge for</h2>
+      </div>
+      <div class="card charges reveal">
+        <table>
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Starter</th><th scope="col">Team</th><th scope="col">Professional</th><th scope="col">Enterprise</th><th scope="col">Global</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Extra seat, per year</th>
+              <td data-label="Starter">$1,200</td><td data-label="Team">$1,000</td><td data-label="Professional">$900</td><td data-label="Enterprise">$750</td><td data-label="Global">$750</td>
+            </tr>
+            <tr>
+              <th scope="row">Responses above your allowance</th>
+              <td class="span" colspan="5">$0.65 per response on every plan, settled at renewal</td>
+            </tr>
+            <tr>
+              <th scope="row">Invites sent to your own list, per 1,000 emails</th>
+              <td data-label="Starter">$150</td><td data-label="Team">$120</td><td data-label="Professional">$100</td><td data-label="Enterprise">$80</td><td data-label="Global">$80</td>
+            </tr>
+            <tr>
+              <th scope="row">Respondents from our panel</th>
+              <td class="span" colspan="5">Quoted per study. Team and above draw on fieldwork credit first.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -745,7 +799,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
     <div class="container">
       <div class="section-head reveal">
         <h2 class="section-h2">What we quote, and why</h2>
-        <p class="section-p">A single published number would be wrong for almost everyone. Every quote comes back within one working day, in writing, whether or not you buy</p>
+        <p class="section-p wide">A single published number would be wrong for almost everyone. Every quote comes back within one working day, in writing, whether or not you buy</p>
       </div>
       <div class="quote-grid">
         <div class="card warm quote-card reveal">
@@ -805,6 +859,41 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
           <div class="every-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="10" rx="2"/><path d="M2 10l3.5-3 3 2.5L11 7l3 2.5"/></svg></div>
           <p class="step-name">Media storage is not billed</p>
           <p class="body">Image, audio, video and file answers are covered by a fair use allowance on every plan. Nothing is metered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ (accordion) ═══ -->
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-h2">Questions people ask</h2>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">What counts as a response?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-a">One completed survey of up to 50 questions. We count answers rather than interviews, so a 100-question survey uses two responses of your allowance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">How do we pay?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-a">Starter is paid by card, upfront for the year. Team and Professional are invoiced annually in advance on 30-day terms. Enterprise and Global are invoiced quarterly in advance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Do our own contacts count?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-a">Yes. Responses from your own list use your allowance. If we send the invitations for you, that is charged per 1,000 emails, as listed above.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Which markets do you cover?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-a">Our own panel covers Singapore, Malaysia, Thailand, Indonesia, the Philippines and Vietnam. Partner panels extend reach to more than 150 countries.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">What happens as we grow?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-a">Extra seats cost less on higher plans, and the discount on panel rates rises from 5% on Team to 20% on Global.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">How does fieldwork credit work?<span class="faq-icon" aria-hidden="true">+</span></div>
+          <div class="faq-a">Team and above include credit to spend on respondents from our panel. It is drawn at the quoted rate for each study.</div>
         </div>
       </div>
     </div>
@@ -907,6 +996,18 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
       document.body.classList.remove('nav-open');
       toggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // FAQ accordion: one open at a time, as on the Milieu inner pages
+  var faqItems = document.querySelectorAll('.faq-item');
+  document.querySelectorAll('.faq-q').forEach(function (q) {
+    function toggle() {
+      var item = q.parentElement, isOpen = item.classList.contains('open');
+      faqItems.forEach(function (i) { i.classList.remove('open'); i.firstElementChild.setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { item.classList.add('open'); q.setAttribute('aria-expanded', 'true'); }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
   });
 
   // Scroll reveal (homepage .reveal / .in)
