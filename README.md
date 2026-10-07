@@ -40,6 +40,10 @@ All the full-width cards (MiHQ Global, MiAudience, the charges dropdown, Not sur
 study?) share one style: 20px title, 15px text, button on the right, 28/32px padding, outline buttons.
 Solid blue buttons are kept for the main actions only.
 
+Pills, buttons and call-to-action links use Title Case (short joining words such as a, the, to and by
+stay lowercase). The "MOST CHOSEN" / "COMING SOON" pills and the table headings display in capitals;
+the "MiResearch" and "Where the Two Meet" labels display as written.
+
 Copy source: "MiHQ pricing page boards" (2026-10-04), with edits agreed up to 2026-10-07
 (new hero pill, title and sub-headline; revised small print; MiAudience card; no full stops at the
 end of headlines and sub-headlines; "Everything else we offer" removed).
