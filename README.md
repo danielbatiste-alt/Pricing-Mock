@@ -26,27 +26,29 @@ Uses the mili.eu landing page design system (taken from its `main.css` / `nav.cs
 
 ## Page structure
 
-1. Hero: pill "MiHQ Powered by MiCortex", title "Every price, up front. Find the right MiHQ plan for you"
-2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise
+1. Hero: pill "MiHQ Powered by MiCortex", title "Every price, up front / Find the right MiHQ plan for you"
+2. MiHQ plans: Starter, Team, Professional (most chosen), Enterprise ("MiHQ" in brand blue in the plan names)
 3. MiHQ Global and MiAudience cards, then "Everything else we charge for" as a dropdown (table; stacks into a list on mobile), then the pricing small print
-4. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end; Not sure… / Back to plans
-5. What we quote, and why; Only need one study?
+4. MiResearch: MiCustom, MiBus, MiRetail; A project is not a dead end (3 steps + "Talk to Us About a Study")
+5. What we quote, and why
 6. In every plan *(light from here)*
 7. Questions people ask (collapsed accordion, one answer open at a time)
 8. Tell us the study, not your budget
 9. Footer
 
-All the full-width cards (MiHQ Global, MiAudience, the charges dropdown, Not sure…, Only need one
-study?) share one style: 20px title, 15px text, button on the right, 28/32px padding, outline buttons.
-Solid blue buttons are kept for the main actions only.
+The full-width cards (MiHQ Global, MiAudience and the charges dropdown) share one style: 20px title,
+15px text, button on the right, 28/32px padding, outline buttons. Solid blue buttons are kept for the
+main actions only.
 
-Pills, buttons and call-to-action links use Title Case (short joining words such as a, the, to and by
-stay lowercase). The "MOST CHOSEN" / "COMING SOON" pills and the table headings display in capitals;
-the "MiResearch" and "Where the Two Meet" labels display as written.
+Pills, buttons, nav buttons and call-to-action links use Title Case (short joining words such as a,
+the, to and by stay lowercase). The "MOST CHOSEN" / "COMING SOON" pills and the table headings display
+in capitals; the "MiResearch" and "Where the Two Meet" labels display as written. The mock's nav and
+footer use the new product names (MiHQ, MiAudience, MiTemplates, MiBus); the live nav is configured
+separately.
 
-Copy source: "MiHQ pricing page boards" (2026-10-04), with edits agreed up to 2026-10-07
-(new hero pill, title and sub-headline; revised small print; MiAudience card; no full stops at the
-end of headlines and sub-headlines; "Everything else we offer" removed).
+Copy source: "MiHQ pricing page boards" (2026-10-04), with edits agreed up to 2026-10-09
+(hero pill, title and sub-headline; revised small print; MiAudience card; the one-study message shown
+once; no full stops at the end of headlines and sub-headlines; "Everything else we offer" removed).
 
 The FAQ accordion follows the Milieu inner pages (canvas-v2 / MiAudience).
 

@@ -188,7 +188,7 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
   background: radial-gradient(ellipse 60% 55% at 50% 0%, rgba(72,173,255,0.10) 0%, transparent 70%);
 }
 .hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
-@media (max-width: 900px) { .br-desk { display: none; } }
+.brand { color: var(--blue-dark); }  /* MiHQ in brand blue on dark */
 .badge-dark {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 16px 6px 10px; border-radius: 100px;
@@ -330,7 +330,8 @@ body.nav-open #main-nav .nav-toggle span:nth-child(3) { transform: translateY(-7
 
 .meet { margin-top: 16px; padding: 48px; }
 .meet-h { font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.1; color: #fff; margin-bottom: 14px; }
-.meet > .body { max-width: 760px; }
+.meet > .body { max-width: 760px; text-wrap: balance; }
+.meet-cta { margin-top: 40px; }
 /* Steps — echoes the homepage flywheel flow */
 .steps { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; padding-top: 36px; }
 .steps::before {
@@ -561,7 +562,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
   <div class="nav-links" id="nav-links">
     <div class="nav-item">
       <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Our Solutions</span>
-      <div class="nav-dd"><a href="#">Canvas</a><a href="#">Portraits</a><a href="#">Templates</a><a href="#">Multibus</a></div>
+      <div class="nav-dd"><a href="#">MiHQ</a><a href="#">MiAudience</a><a href="#">MiTemplates</a><a href="#">MiBus</a></div>
     </div>
     <div class="nav-item">
       <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Insights</span>
@@ -577,8 +578,8 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
     </div>
   </div>
   <div class="nav-actions">
-    <a href="#" class="btn btn-nav-outline">Contact us</a>
-    <a href="#" class="btn btn-primary">Request demo</a>
+    <a href="#" class="btn btn-nav-outline">Contact Us</a>
+    <a href="#" class="btn btn-primary">Request Demo</a>
   </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -590,8 +591,8 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
   <header class="hero">
     <div class="hero-inner">
       <span class="badge-dark"><span class="badge-dot"></span>MiHQ Powered by MiCortex</span>
-      <h1 class="hero-h1">Every price, up front.<br class="br-desk"> Find the right MiHQ plan for you</h1>
-      <p class="hero-sub">Our MiHQ plans and prices below. From custom research and access to our respondent panel, pricing is determined by your audience and research requirements. Request a quote now!</p>
+      <h1 class="hero-h1">Every price, up front<br class="br-desk"> Find the right <span class="brand">MiHQ</span> plan for you</h1>
+      <p class="hero-sub">Every MiHQ plan is priced below. Respondents from our panel and research we run for you are quoted within one working day</p>
     </div>
   </header>
 
@@ -600,7 +601,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
     <div class="container">
       <div class="plans">
         <article class="card plan reveal">
-          <div><h3 class="plan-name">MiHQ Starter</h3><p class="plan-for">Solo consultants and boutique agencies</p></div>
+          <div><h3 class="plan-name"><span class="brand">MiHQ</span> Starter</h3><p class="plan-for">Solo consultants and boutique agencies</p></div>
           <div class="plan-price"><span class="amt">$2,880</span><span class="per">per year</span></div>
           <div class="plan-cta"><a href="#" class="btn btn-outline-white btn-block">Get Started</a></div>
           <ul class="feat">
@@ -614,7 +615,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         </article>
 
         <article class="card plan reveal reveal-d1">
-          <div><h3 class="plan-name">MiHQ Team</h3><p class="plan-for">Small insight teams and mid-size agencies</p></div>
+          <div><h3 class="plan-name"><span class="brand">MiHQ</span> Team</h3><p class="plan-for">Small insight teams and mid-size agencies</p></div>
           <div class="plan-price"><span class="amt">$12,000</span><span class="per">per year</span></div>
           <div class="plan-cta"><a href="#" class="btn btn-outline-white btn-block">Get Started</a></div>
           <ul class="feat">
@@ -632,7 +633,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
 
         <article class="card plan featured reveal reveal-d2">
           <span class="plan-tag">Most Chosen</span>
-          <div><h3 class="plan-name">MiHQ Professional</h3><p class="plan-for">Brand insight teams and full-service agencies</p></div>
+          <div><h3 class="plan-name"><span class="brand">MiHQ</span> Professional</h3><p class="plan-for">Brand insight teams and full-service agencies</p></div>
           <div class="plan-price"><span class="amt">$30,000</span><span class="per">per year</span></div>
           <div class="plan-cta"><a href="#" class="btn btn-primary btn-lg btn-block">Get Started</a></div>
           <ul class="feat">
@@ -651,7 +652,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         </article>
 
         <article class="card plan reveal reveal-d3">
-          <div><h3 class="plan-name">MiHQ Enterprise</h3><p class="plan-for">Multi-market brands and network agencies</p></div>
+          <div><h3 class="plan-name"><span class="brand">MiHQ</span> Enterprise</h3><p class="plan-for">Multi-market brands and network agencies</p></div>
           <div class="plan-price"><span class="from">From</span><span class="amt">$65,000</span><span class="per">per year</span></div>
           <div class="plan-cta"><a href="#" class="btn btn-outline-white btn-block">Get a Quote</a></div>
           <ul class="feat">
@@ -779,7 +780,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
       <div class="card meet reveal">
         <span class="eyebrow">Where the Two Meet</span>
         <h3 class="meet-h">A project is not a dead end</h3>
-        <p class="body">Most research finishes as a deck in a folder. Ours can finish in MiHQ, where you can recut it and compare it with the next study. Take an annual MiHQ licence within 90 days and the MiHQ Project fee comes off your first invoice</p>
+        <p class="body">Most research finishes as a deck in a folder. Ours can finish in MiHQ, where you can recut it and compare it with the next study</p>
         <div class="steps">
           <div class="step">
             <span class="step-dot"></span>
@@ -800,14 +801,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
             <p class="body">Take a licence within 90 days and the MiHQ Project fee comes off your first invoice.</p>
           </div>
         </div>
-      </div>
-
-      <div class="card strip reveal">
-        <div class="strip-copy">
-          <h3 class="strip-title">Not sure whether you want the platform, the team, or both?</h3>
-          <p>Start with one study and decide afterwards.</p>
-        </div>
-        <a href="#plans" class="btn btn-outline-white">Back to Plans</a>
+        <div class="meet-cta"><a href="#" class="btn btn-outline-white">Talk to Us About a Study</a></div>
       </div>
     </div>
   </section>
@@ -835,14 +829,6 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
           <p class="body">Priced on the number of business units, the markets you work in and the volume you field.</p>
           <a href="#" class="text-link gold">Get a Quote →</a>
         </div>
-      </div>
-
-      <div class="card strip reveal">
-        <div class="strip-copy">
-          <h3 class="strip-title">Only need one study?</h3>
-          <p>Have our team run it, and it can come with 90 days of MiHQ, so the data is yours to recut rather than a deck in a folder. Take an annual MiHQ licence within those 90 days and the MiHQ Project fee comes off your first invoice</p>
-        </div>
-        <a href="#" class="btn btn-outline-white">Talk to Us About a Study</a>
       </div>
     </div>
   </section>
@@ -943,7 +929,7 @@ footer.footer-dark .foot-bottom a:hover { color: var(--cyan); }
         </svg>
       </div>
       <div class="foot"><h5>Our Solutions</h5>
-        <a href="#">Canvas</a><a href="#">Portraits</a><a href="#">Templates</a><a href="#">Multibus</a>
+        <a href="#">MiHQ</a><a href="#">MiAudience</a><a href="#">MiTemplates</a><a href="#">MiBus</a>
       </div>
       <div class="foot"><h5>Content Hub</h5>
         <a href="#">Press Releases</a><a href="#">Publications</a><a href="#">Blog</a>
